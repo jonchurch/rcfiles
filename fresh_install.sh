@@ -22,6 +22,7 @@ valgrind \
 openjdk-8-jdk \
 python \
 python3 \
+zsh \
 tmux
 
 sudo apt-get update
