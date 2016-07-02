@@ -1,11 +1,11 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/brandon/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="honukai"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -27,10 +27,10 @@ ZSH_THEME="honukai"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
- ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
- COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -82,39 +82,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-#tmux
-if command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux -2
-fi
-
-alias ls="ls -F --color=auto"
-alias ll="ls -l"
-alias la="ls -a"
-alias lal="ls -al"
-alias sagi="sudo apt install"
-alias sagr="sudo apt remove"
-alias killtmux='tmux kill-session -t 0'
-alias vi="vim"
-
-#dircolors
-export TERM=screen-256color
-eval `dircolors -b ~/.dircolors`
-
-##powerline
-#function powerline_precmd() {
-    #PS1="$(~/powerline-shell.py $? --shell zsh 2> /dev/null)"
-#}
-
-#function install_powerline_precmd() {
-  #for s in "${precmd_functions[@]}"; do
-    #if [ "$s" = "powerline_precmd" ]; then
-      #return
-    #fi
-  #done
-  #precmd_functions+=(powerline_precmd)
-#}
-
-#if [ "$TERM" != "linux" ]; then
-    #install_powerline_precmd
-#fi
