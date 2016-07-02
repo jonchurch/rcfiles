@@ -10,8 +10,10 @@ Plugin 'tpope/vim-dispatch' "this makes launching omnisharp asynchronous and eas
 Plugin 'altercation/vim-colors-solarized' "solarized themes
 Plugin 'scrooloose/NERDcommenter' "cool comment engine that allows ,c<space> to toggle comment on selection
 Plugin 'scrooloose/NERDtree' "file browser that is supposedly nice
-Plugin 'wesQ3/vim-windowswap' "really nice window swap with <leader>cc TODO customize key
+Plugin 'wesQ3/vim-windowswap' "really nice window swap with <leader>ww 
 Plugin 'ternjs/tern_for_vim' "tern js completion
+Plugin 'godlygeek/tabular' "this and the below plugin needed for reading .md files well
+Plugin 'plasticboy/vim-markdown'
 call vundle#end()
 filetype plugin indent on
 
