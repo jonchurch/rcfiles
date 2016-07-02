@@ -12,6 +12,9 @@ zstyle :compinstall filename '/home/brandon/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+# menu completion
+zstyle ':completion:*' menu select
+setopt COMPLETE_ALIASES
 
 #tmux
 if command -v tmux>/dev/null; then
