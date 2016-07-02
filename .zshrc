@@ -19,6 +19,9 @@ if command -v tmux>/dev/null; then
 fi
 
 alias ls="ls -F --color=auto"
+alias ll="ls -l"
+alias la="ls -a"
+alias lal="ls -al"
 alias sagi="sudo apt install"
 alias sagr="sudo apt remove"
 alias killtmux='tmux kill-session -t 0'

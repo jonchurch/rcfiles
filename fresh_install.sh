@@ -59,3 +59,6 @@ git clone https://github.com/vim/vim.git src/vim
     --enable-gui=gtk2 --enable-cscope
 make VIMRUNTIMEDIR=/usr/share/vim/vim74 && sudo make install
 cd $HOME
+
+#change shell to zsh
+csh /bin/zsh
