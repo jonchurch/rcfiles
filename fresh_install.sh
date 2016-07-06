@@ -9,6 +9,8 @@ rm -r ~/Pictures
 rm -r ~/Videos
 rm -r ~/Public
 
+#TODO add aliases
+
 sudo apt-get update
 
 sudo apt-get --assume-yes install \
@@ -24,6 +26,11 @@ python \
 python3 \
 zsh \
 tmux
+
+#nodejs
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sagi -y nodejs
+
 
 sudo apt-get update
 
@@ -58,7 +65,20 @@ git clone https://github.com/vim/vim.git src/vim
     --enable-luainterp \
     --enable-gui=gtk2 --enable-cscope
 make VIMRUNTIMEDIR=/usr/share/vim/vim74 && sudo make install
+#TODO set up ycm
 cd $HOME
+
+#nvim
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt update
+sudo apt install neovim
+sudo apt-get install python-dev python-pip python3-dev python3-pip
+sudo apt install xclip
+mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
+ln -s ~/.vim $XDG_CONFIG_HOME/nvim
+ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
+sudo pip3 install --upgrade neovim
 
 #change shell to zsh
 csh /bin/zsh
