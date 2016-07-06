@@ -95,7 +95,10 @@ alias lal="ls -al"
 alias sagi="sudo apt install"
 alias sagr="sudo apt remove"
 alias killtmux='tmux kill-session -t 0'
-alias vi="vim"
+alias vi="nvim"
+alias vim="nvim"
+alias python="python3"
+alias dosbox="dosbox 2&>1 > /dev/null"
 
 #dircolors
 export TERM=screen-256color

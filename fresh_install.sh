@@ -79,6 +79,7 @@ mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 ln -s ~/.vim $XDG_CONFIG_HOME/nvim
 ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
 sudo pip3 install --upgrade neovim
+sudo pip2 install --upgrade neovim
 
 #change shell to zsh
 csh /bin/zsh
