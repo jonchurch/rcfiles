@@ -83,3 +83,5 @@ sudo pip2 install --upgrade neovim
 
 #change shell to zsh
 csh /bin/zsh
+sudo ln -s /home/brandon/.oh-my-zsh /root/.oh-my-zsh
+sudo ln -s /home/brandon/.zshrc /root/.zshrc

@@ -104,6 +104,10 @@ alias dosbox="dosbox 2&>1 > /dev/null"
 export TERM=screen-256color
 eval `dircolors -b ~/.dircolors`
 
+syndaemon -d -i .5 -k -R
+
+export PATH=$HOME/bin:$PATH
+
 ##powerline
 #function powerline_precmd() {
     #PS1="$(~/powerline-shell.py $? --shell zsh 2> /dev/null)"
