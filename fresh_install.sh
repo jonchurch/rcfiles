@@ -25,6 +25,7 @@ openjdk-8-jdk \
 python \
 python3 \
 zsh \
+tree \
 tmux
 
 #nodejs

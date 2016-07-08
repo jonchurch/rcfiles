@@ -10,6 +10,7 @@ Plugin 'tpope/vim-dispatch' "this makes launching omnisharp asynchronous and eas
 Plugin 'altercation/vim-colors-solarized' "solarized themes
 Plugin 'scrooloose/NERDcommenter' "cool comment engine that allows ,c<space> to toggle comment on selection
 Plugin 'scrooloose/NERDtree' "file browser that is supposedly nice
+Plugin 'majutsushi/TagBar' "tagbar for browsing source
 Plugin 'wesQ3/vim-windowswap' "really nice window swap with <leader>ww 
 Plugin 'ternjs/tern_for_vim' "tern js completion
 Plugin 'godlygeek/tabular' "this and the below plugin needed for reading .md files well
@@ -56,6 +57,9 @@ set colorcolumn=80
 set cindent
 autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
+"Notes mode
+autocmd FileType notes setlocal tw=0
+
 "tablemode stuff
 let g:table_mode_header_fillchar="="
 
@@ -87,15 +91,11 @@ let g:syntastic_python_pylint_post_args = '--rcfile="C:\users\brpollac\pylint.rc
 "global mappings
 map \\ :set nohlsearch!<CR>
 imap jj <Esc>
-nnoremap <Leader>t :NERDTreeToggle<CR>
+nnoremap <Leader>f :NERDTreeToggle<CR>
 nnoremap <Leader>T :TagBar<CR>
 
 "shows the currently typing command by the ruler
 set showcmd
-
-if &t_Co > 2 || has("gui_running")
-    syntax on
-endif
 
 if has("vms")
     set nobackup            " do not keep a backup file, use versions instead
