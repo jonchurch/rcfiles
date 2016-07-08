@@ -14,6 +14,9 @@ Plugin 'wesQ3/vim-windowswap' "really nice window swap with <leader>ww
 Plugin 'ternjs/tern_for_vim' "tern js completion
 Plugin 'godlygeek/tabular' "this and the below plugin needed for reading .md files well
 Plugin 'plasticboy/vim-markdown'
+Plugin 'xolox/vim-misc' "needed for vim-notes below
+Plugin 'xolox/vim-notes' "cool notetaking app for vim, start with :Notes
+Plugin 'dhruvasagar/vim-table-mode' "table mode, start with <leader>tm
 call vundle#end()
 filetype plugin indent on
 
@@ -52,6 +55,9 @@ set colorcolumn=80
 "indent stuff
 set cindent
 autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+
+"tablemode stuff
+let g:table_mode_header_fillchar="="
 
 "YCM
 nnoremap <Leader>jd :split<CR>:YcmCompleter GoToDefinition<CR>:res 2<CR>
