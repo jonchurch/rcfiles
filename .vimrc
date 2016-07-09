@@ -18,6 +18,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'xolox/vim-misc' "needed for vim-notes below
 Plugin 'xolox/vim-notes' "cool notetaking app for vim, start with :Notes
 Plugin 'dhruvasagar/vim-table-mode' "table mode, start with <leader>tm
+Plugin 'tommcdo/vim-exchange' "exchange text with cx{motion} cxx (for line) or X in visual mode
 call vundle#end()
 filetype plugin indent on
 
