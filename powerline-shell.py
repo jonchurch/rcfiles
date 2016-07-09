@@ -1,1 +1,0 @@
-/home/brandon/src/powerline-shell/powerline-shell.py

@@ -100,28 +100,11 @@ alias vim="nvim"
 alias python="python3"
 alias dosbox="dosbox 2&>1 > /dev/null"
 
+export PATH=$HOME/bin:$PATH
+
 #dircolors
 export TERM=screen-256color
 eval `dircolors -b ~/.dircolors`
 
+#mouse wait to activate while typing
 syndaemon -d -i .5 -k -R
-
-export PATH=$HOME/bin:$PATH
-
-##powerline
-#function powerline_precmd() {
-    #PS1="$(~/powerline-shell.py $? --shell zsh 2> /dev/null)"
-#}
-
-#function install_powerline_precmd() {
-  #for s in "${precmd_functions[@]}"; do
-    #if [ "$s" = "powerline_precmd" ]; then
-      #return
-    #fi
-  #done
-  #precmd_functions+=(powerline_precmd)
-#}
-
-#if [ "$TERM" != "linux" ]; then
-    #install_powerline_precmd
-#fi

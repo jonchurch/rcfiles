@@ -50,7 +50,7 @@ set softtabstop=4
 set backspace=indent,eol,start "be able to backspace indents, lines, and start
 
 "text width etc
-set tw=80
+set tw=100
 set colorcolumn=80
 
 "indent stuff
@@ -59,6 +59,7 @@ autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try
 
 "Notes mode
 autocmd FileType notes setlocal tw=0
+let g:notes_directories = ['~/OneDrive/notes', '~/.vim/bundle/vim-notes/misc/notes/user/']
 
 "tablemode stuff
 let g:table_mode_header_fillchar="="
