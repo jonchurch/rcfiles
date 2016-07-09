@@ -9,8 +9,6 @@ rm -r ~/Pictures
 rm -r ~/Videos
 rm -r ~/Public
 
-#TODO add aliases
-
 sudo apt-get update
 
 sudo apt-get --assume-yes install \
@@ -20,6 +18,7 @@ gdb \
 g++ \
 gcc \
 clang \
+cmake \
 valgrind \
 openjdk-8-jdk \
 python \
@@ -30,8 +29,8 @@ tmux
 
 #nodejs
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get update
 sagi -y nodejs
-
 
 sudo apt-get update
 
@@ -66,7 +65,12 @@ git clone https://github.com/vim/vim.git src/vim
     --enable-luainterp \
     --enable-gui=gtk2 --enable-cscope
 make VIMRUNTIMEDIR=/usr/share/vim/vim74 && sudo make install
-#TODO set up ycm
+#vundle setup
+git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+#YCM setup
+cd $HOME/.vim/bundle/YouCompleteMe
+./install.py --clang-completer --tern-completer
 cd $HOME
 
 #nvim
