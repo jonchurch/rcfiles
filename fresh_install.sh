@@ -1,6 +1,12 @@
 #!/bin/bash
+set -e
 
-# Brandon Pollack
+if [ "$(id -u)" != "0" ]; then
+    echo "in order to make this script run with less hassle, run it as root"
+    exit 1
+fi
+
+# Author: Brandon Pollack
 # This is a script to setup debian based systems to my preference
 
 # useless folders...
@@ -11,7 +17,7 @@ rm -r ~/Public
 
 sudo apt-get update
 
-sudo apt-get --assume-yes install \
+sudo apt --assume-yes install \
 sshfs \
 git \
 gdb \
@@ -44,14 +50,6 @@ git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git \
     src/gnome-terminal-colors-solarized
 cd src/gnome-terminal-colors-solarized/
 ./install.sh -s dark -p Default
-cd $HOME
-
-#powerline
-git clone https://github.com/milkbikis/powerline-shell src/powerline-shell
-cd src/powerline-shell
-./install.py
-ln $HOME/src/powerline-shell/powerline-shell.py $HOME/powerline-shell.py
-pip install argparse
 cd $HOME
 
 #vim, need to get latest version and have all the right modules
