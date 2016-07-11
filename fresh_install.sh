@@ -63,13 +63,6 @@ git clone https://github.com/vim/vim.git src/vim
     --enable-luainterp \
     --enable-gui=gtk2 --enable-cscope
 make VIMRUNTIMEDIR=/usr/share/vim/vim74 && sudo make install
-#vundle setup
-git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-#YCM setup
-cd $HOME/.vim/bundle/YouCompleteMe
-./install.py --clang-completer --tern-completer
-cd $HOME
 
 #nvim
 sudo apt install software-properties-common
@@ -83,6 +76,12 @@ ln -s ~/.vim $XDG_CONFIG_HOME/nvim
 ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
 sudo pip3 install --upgrade neovim
 sudo pip2 install --upgrade neovim
+#vim-plug setup nvim
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+#vim-plug setup vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 #change shell to zsh
 csh /bin/zsh

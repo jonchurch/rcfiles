@@ -1,26 +1,20 @@
-filetype off
-set rtp+=$HOME/.vim/bundle/Vundle.vim/
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator'
-Plugin 'tpope/vim-surround' "jump between curlies or any braces or parens
-Plugin 'scrooloose/syntastic' "syntax checking
-Plugin 'tpope/vim-dispatch' "this makes launching omnisharp asynchronous and easy
-Plugin 'altercation/vim-colors-solarized' "solarized themes
-Plugin 'scrooloose/NERDcommenter' "cool comment engine that allows ,c<space> to toggle comment on selection
-Plugin 'scrooloose/NERDtree' "file browser that is supposedly nice
-Plugin 'majutsushi/TagBar' "tagbar for browsing source
-Plugin 'wesQ3/vim-windowswap' "really nice window swap with <leader>ww 
-Plugin 'ternjs/tern_for_vim' "tern js completion
-Plugin 'godlygeek/tabular' "this and the below plugin needed for reading .md files well
-Plugin 'plasticboy/vim-markdown'
-Plugin 'xolox/vim-misc' "needed for vim-notes below
-Plugin 'xolox/vim-notes' "cool notetaking app for vim, start with :Notes
-Plugin 'dhruvasagar/vim-table-mode' "table mode, start with <leader>tm
-Plugin 'tommcdo/vim-exchange' "exchange text with cx{motion} cxx (for line) or X in visual mode
-call vundle#end()
-filetype plugin indent on
+call plug#begin('~/.vim/plugged')
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'rdnetto/YCM-Generator', { 'for': ['C', 'C++'], 'branch': 'stable' }
+Plug 'tpope/vim-surround' "jump between curlies or any braces or parens
+Plug 'neomake/neomake', has('nvim') ? {} : { 'on': [] } "replacment for syntastic that is asynchronous
+Plug 'scrooloose/syntastic', has('nvim') ? { 'on': [] } : {}  "syntax checking
+Plug 'altercation/vim-colors-solarized' "solarized themes
+Plug 'scrooloose/NERDcommenter' "cool comment engine that allows ,c<space> to toggle comment on selection
+Plug 'scrooloose/NERDtree', { 'on': 'NERDTreeToggle' } "file browser that is supposedly nice
+Plug 'majutsushi/TagBar', { 'on': 'TagBarToggle' } "tagbar for browsing source
+Plug 'wesQ3/vim-windowswap', { 'on': 'WindowSwap' } "really nice window swap with <leader>ww 
+Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }  "tern js completion
+Plug 'godlygeek/tabular', { 'for': 'markdown' } | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' } "needed for reading .md files well
+Plug 'xolox/vim-misc' | Plug 'xolox/vim-notes' "cool notetaking app for vim, start with :Notes
+Plug 'dhruvasagar/vim-table-mode' "table mode, start with <leader>tm
+Plug 'tommcdo/vim-exchange' "exchange text with cx{motion} cxx (for line) or X in visual mode
+call plug#end()
 
 "My settings and things
 set exrc "execute a local vimrc file for project configuration
@@ -35,7 +29,7 @@ set splitbelow "these maket he splits go where i want
 set backupdir=$HOME/.vim/backupdir,. "set backup directory for ~ files in case i fuck up
 set directory=$HOME/.vim/swapdir,. "swap files for swap yo
 set makeprg=make "make command makes with make
-"set autochdir "working dir is always current file
+"set autochdir "working dir is always current fileA
 let mapleader = "," "this is the value of <Leader> who knows why it has to be configured
 
 set wildmenu "this is the cool menu that shows you whats up when you press <Tab>
@@ -60,7 +54,7 @@ autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try
 
 "Notes mode
 autocmd FileType notes setlocal tw=0
-let g:notes_directories = ['~/OneDrive/notes', '~/.vim/bundle/vim-notes/misc/notes/user/']
+let g:notes_directories = ['~/OneDrive/notes', '~/.vim/plugged/vim-notes/misc/notes/user/']
 
 "tablemode stuff
 let g:table_mode_header_fillchar="="
@@ -78,23 +72,27 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_python_binary_path = 'C:\Python35\python3.exe'
 set tags+=./tags,tags;
 
-"syntastic setup
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_error_symbol = "!"
-let g:syntastic_warning_symbol = "W"
-let g:syntastic_python_pylint_post_args = '--rcfile="C:\users\brpollac\pylint.rc"'
+"neocomplete/syntastic setup
+if &runtimepath =~ 'syntastic'
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+    let g:syntastic_error_symbol = "!"
+    let g:syntastic_warning_symbol = "W"
+    let g:syntastic_python_pylint_post_args = '--rcfile="C:\users\brpollac\pylint.rc"'
+else
+    "neocomplete setup
+endif
 
 "global mappings
 map \\ :set nohlsearch!<CR>
 imap jj <Esc>
 nnoremap <Leader>f :NERDTreeToggle<CR>
-nnoremap <Leader>T :TagBar<CR>
+nnoremap <Leader>T :TagBarToggle<CR>
 
 "shows the currently typing command by the ruler
 set showcmd
