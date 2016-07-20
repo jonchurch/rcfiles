@@ -82,6 +82,7 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 #vim-plug setup vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +PlugInstall +qall
 
 #change shell to zsh
 csh /bin/zsh

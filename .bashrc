@@ -121,10 +121,17 @@ if command -v tmux>/dev/null; then
   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
 
-alias sagi="sudo apt install"
-alias sagr="sudo apt remove"
+alias ls='ls -F --color=auto'
+alias ll='ls -l'
+alias la='ls -a'
+alias lal='ls -al'
+alias sagi='sudo apt install'
+alias sagr='sudo apt remove'
 alias killtmux='tmux kill-session -t 0'
+alias vi='nvim'
+alias vim='nvim'
+alias python='python3'
+alias dosbox='dosbox 2&>1 > /dev/null'
+alias :q='exit'
 
-# vi to vim alias
-alias vi="vim"
 export TERM=screen-256color
