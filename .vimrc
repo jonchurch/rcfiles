@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/vimfiles/plugged')
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'rdnetto/YCM-Generator', { 'for': ['C', 'C++'], 'branch': 'stable' }
 Plug 'tpope/vim-surround' "jump between curlies or any braces or parens
