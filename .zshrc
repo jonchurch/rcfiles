@@ -107,5 +107,8 @@ export PATH=$HOME/bin:$PATH
 export TERM=screen-256color
 eval `dircolors -b ~/.dircolors`
 
+#zsh syntax hightlighting
+source .oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 #mouse wait to activate while typing
 syndaemon -d -i .5 -k -R
