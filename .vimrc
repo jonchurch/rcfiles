@@ -18,6 +18,7 @@ Plug 'airblade/vim-gitgutter' "adds add and remove annotations to files for git
 Plug 'vim-utils/vim-man' "man pages, bitch, fuck less
 Plug 'vim-airline/vim-airline' "status bar so pretty
 Plug 'vim-airline/vim-airline-themes' "status bar EVEN PURTIER
+Plug 'mattn/emmet-vim' "html magic tags blasphemy, html:5<C-y>,   
 call plug#end()
 
 "My settings and things
@@ -63,6 +64,34 @@ let g:notes_directories = ['~/OneDrive/notes', '~/.vim/plugged/vim-notes/misc/no
 
 "tablemode stuff
 let g:table_mode_header_fillchar="="
+
+"airline
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 "YCM
 nnoremap <Leader>jd :split<CR>:YcmCompleter GoToDefinition<CR>:res 2<CR>
