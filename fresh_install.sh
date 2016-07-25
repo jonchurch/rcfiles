@@ -94,7 +94,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 vim +PlugInstall +qall
 
 #change shell to zsh
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git .oh-my-zsh/zsh-syntax-highlighting.git
+#TODO add and configure oh-my-zsh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git .oh-my-zsh/zsh-syntax-highlighting
 chsh $USER -s /bin/zsh
 sudo ln -s /home/brandon/.oh-my-zsh /root/.oh-my-zsh
 sudo rm /root/.zshrc
