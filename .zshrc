@@ -99,7 +99,7 @@ alias vi='nvim'
 alias vim='nvim'
 alias python='python3'
 alias dosbox='dosbox 2&>1 > /dev/null'
-alias man='vim +Man'
+man () { vim +"Man $@" +on; } #use vim for man pages
 alias :q='exit'
 
 export PATH=$HOME/bin:$PATH
