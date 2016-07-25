@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+$USER=brandon
+
 if [ "$(id -u)" != "0" ]; then
     echo "in order to make this script run with less hassle, run it as root"
     exit 1
@@ -18,8 +20,10 @@ rm -r ~/Public
 sudo apt-get update
 
 sudo apt --assume-yes install \
+gnome-terminal \
 sshfs \
 git \
+curl \
 gdb \
 g++ \
 gcc \
@@ -36,11 +40,11 @@ tmux
 #nodejs
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get update
-sagi -y nodejs
+sudo apt install -y nodejs
 
-sudo apt-get update
+sudo apt -y update
 
-sudo apt-get upgrade
+sudo apt -y upgrade
 
 #get dircolors solarized, the symbolic link will point to a config here
 git clone https://github.com/seebi/dircolors-solarized src/dircolors-solarized 
@@ -54,6 +58,7 @@ cd $HOME
 
 #vim, need to get latest version and have all the right modules
 git clone https://github.com/vim/vim.git src/vim
+cd src/vim
 ./configure --with-features=huge \
     --enable-multibyte \
     --enable-rubyinterp \
@@ -63,17 +68,21 @@ git clone https://github.com/vim/vim.git src/vim
     --enable-luainterp \
     --enable-gui=gtk2 --enable-cscope
 make VIMRUNTIMEDIR=/usr/share/vim/vim74 && sudo make install
+cd $HOME
 
 #nvim
-sudo apt install software-properties-common
-sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt -y install software-properties-common
+sudo add-apt-repository -y ppa:neovim-ppa/unstable
 sudo apt update
-sudo apt install neovim
-sudo apt-get install python-dev python-pip python3-dev python3-pip
-sudo apt install xclip
+sudo apt install -y neovim
+sudo apt-get install -y python-dev python-pip python3-dev python3-pip
+sudo apt install -y xclip
 mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
-ln -s ~/.vim $XDG_CONFIG_HOME/nvim
+mkdir -p $HOME/.vim
+ln -s ~/.vim/ $XDG_CONFIG_HOME/nvim/
 ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
+sudo pip3 install --upgrade pip
+sudo pip2 install --upgrade pip
 sudo pip3 install --upgrade neovim
 sudo pip2 install --upgrade neovim
 #vim-plug setup nvim
@@ -85,6 +94,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 vim +PlugInstall +qall
 
 #change shell to zsh
-csh /bin/zsh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git .oh-my-zsh/zsh-syntax-highlighting.git
+chsh $USER -s /bin/zsh
 sudo ln -s /home/brandon/.oh-my-zsh /root/.oh-my-zsh
+sudo rm /root/.zshrc
 sudo ln -s /home/brandon/.zshrc /root/.zshrc

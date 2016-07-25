@@ -37,6 +37,7 @@ set wildmenu "this is the cool menu that shows you whats up when you press <Tab>
 "Solarized
 colorscheme solarized
 set background=dark
+set t_Co=256
 
 "tab setup
 set expandtab
