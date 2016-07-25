@@ -14,6 +14,8 @@ Plug 'godlygeek/tabular', { 'for': 'markdown' } | Plug 'plasticboy/vim-markdown'
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-notes' "cool notetaking app for vim, start with :Notes
 Plug 'dhruvasagar/vim-table-mode' "table mode, start with <leader>tm
 Plug 'tommcdo/vim-exchange' "exchange text with cx{motion} cxx (for line) or X in visual mode
+Plug 'airblade/vim-gitgutter' "adds add and remove annotations to files for git
+Plug 'vim-utils/vim-man' "man pages, bitch, fuck less
 call plug#end()
 
 "My settings and things
@@ -31,7 +33,7 @@ set directory=$HOME/.vim/swapdir,. "swap files for swap yo
 set makeprg=make "make command makes with make
 "set autochdir "working dir is always current fileA
 let mapleader = "," "this is the value of <Leader> who knows why it has to be configured
-
+set updatetime=250 "makes things update faster
 set wildmenu "this is the cool menu that shows you whats up when you press <Tab>
 
 "Solarized
