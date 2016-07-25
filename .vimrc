@@ -9,7 +9,7 @@ Plug 'scrooloose/NERDcommenter' "cool comment engine that allows ,c<space> to to
 Plug 'scrooloose/NERDtree', { 'on': 'NERDTreeToggle' } "file browser that is supposedly nice
 Plug 'majutsushi/TagBar', { 'on': 'TagBarToggle' } "tagbar for browsing source
 Plug 'wesQ3/vim-windowswap', { 'on': 'WindowSwap' } "really nice window swap with <leader>ww 
-Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }  "tern js completion
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': 'javascript' }  "tern js completion
 Plug 'godlygeek/tabular', { 'for': 'markdown' } | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' } "needed for reading .md files well
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-notes' "cool notetaking app for vim, start with :Notes
 Plug 'dhruvasagar/vim-table-mode' "table mode, start with <leader>tm
