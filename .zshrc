@@ -88,6 +88,9 @@ if command -v tmux>/dev/null; then
   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux -2
 fi
 
+export EDITOR='nvim'
+export VISUAL='nvim'
+
 alias ls='ls -F --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
@@ -110,6 +113,14 @@ eval `dircolors -b ~/.dircolors`
 
 #zsh syntax hightlighting
 source $HOME/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#add ability to edit command line in vim easily C-x e
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Emacs style
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
 
 #mouse wait to activate while typing
 syndaemon -d -i .5 -k -R
