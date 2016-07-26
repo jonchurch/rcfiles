@@ -103,6 +103,7 @@ alias vim='nvim'
 alias python='python3'
 alias dosbox='dosbox 2&>1 > /dev/null'
 man () { vim +"Man $@" +on; } #use vim for man pages
+alias o='xdg-open'
 alias :q='exit'
 
 export PATH=$HOME/bin:$PATH
