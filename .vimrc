@@ -18,7 +18,7 @@ Plug 'airblade/vim-gitgutter' "adds add and remove annotations to files for git
 Plug 'vim-utils/vim-man' "man pages, bitch, fuck less
 Plug 'vim-airline/vim-airline' "status bar so pretty
 Plug 'vim-airline/vim-airline-themes' "status bar EVEN PURTIER
-Plug 'mattn/emmet-vim' "html magic tags blasphemy, html:5<C-y>,   
+Plug 'mattn/emmet-vim' "html magic tags blasphemy, html:5<C-y>,
 call plug#end()
 
 "My settings and things
@@ -127,6 +127,7 @@ map \\ :set nohlsearch!<CR>
 imap jj <Esc>
 nnoremap <Leader>f :NERDTreeToggle<CR>
 nnoremap <Leader>T :TagBarToggle<CR>
+"to erase what is in a tag (or jump to the inside in insert mode use cit)
 
 "shows the currently typing command by the ruler
 set showcmd
