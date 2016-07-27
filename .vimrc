@@ -34,6 +34,7 @@ set splitbelow "these maket he splits go where i want
 set backupdir=$HOME/.vim/backupdir,. "set backup directory for ~ files in case i fuck up
 set directory=$HOME/.vim/swapdir,. "swap files for swap yo
 set makeprg=make "make command makes with make
+set mouse="" "if i wanted to use a mouse, I'd use a bad text editor, I just want to change focus
 "set autochdir "working dir is always current fileA
 let mapleader = "," "this is the value of <Leader> who knows why it has to be configured
 set updatetime=250 "makes things update faster
@@ -57,6 +58,11 @@ set colorcolumn=80
 "indent stuff
 set cindent
 autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+
+"NERDCommenter settings
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDSpaceDelims = 1
 
 "Notes mode
 autocmd FileType notes setlocal tw=0
