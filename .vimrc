@@ -10,6 +10,8 @@ Plug 'scrooloose/NERDtree', { 'on': 'NERDTreeToggle' } "file browser that is sup
 Plug 'majutsushi/TagBar', { 'on': 'TagBarToggle' } "tagbar for browsing source
 Plug 'wesQ3/vim-windowswap', { 'on': 'WindowSwap' } "really nice window swap with <leader>ww
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': 'javascript' }  "tern js completion
+Plug 'pangloss/vim-javascript', { 'for' : ['javascript', 'javascript.jsx'] } "better js indenting and stuff
+Plug 'mxw/vim-jsx', { 'for' : ['javascript', 'javascript.jsx'] } "jsx highlighting
 Plug 'godlygeek/tabular', { 'for': 'markdown' } | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' } "needed for reading .md files well
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-notes' "cool notetaking app for vim, start with :Notes
 Plug 'dhruvasagar/vim-table-mode' "table mode, start with <leader>tm
@@ -70,6 +72,9 @@ let g:notes_directories = ['~/OneDrive/notes', '~/.vim/plugged/vim-notes/misc/no
 
 "tablemode stuff
 let g:table_mode_header_fillchar="="
+
+"jsx settings
+let g:jsx_ext_required = 0 "extension can be just js
 
 "airline
 let g:airline_powerline_fonts = 1
