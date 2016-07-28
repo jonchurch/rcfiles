@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'rdnetto/YCM-Generator', { 'for': ['C', 'C++'], 'branch': 'stable' }
 Plug 'tpope/vim-surround' "jump between curlies or any braces or parens
+Plug 'tpope/vim-fugitive' "git wrapper, like a candy wrapper but better
 Plug 'neomake/neomake', has('nvim') ? {} : { 'on': [] } "replacment for syntastic that is asynchronous
 Plug 'scrooloose/syntastic', has('nvim') ? { 'on': [] } : {}  "syntax checking
 Plug 'altercation/vim-colors-solarized' "solarized themes
