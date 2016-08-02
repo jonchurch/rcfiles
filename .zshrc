@@ -122,6 +122,3 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
-
-#mouse wait to activate while typing
-syndaemon -d -i .5 -k -R
