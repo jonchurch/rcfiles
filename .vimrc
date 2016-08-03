@@ -42,6 +42,8 @@ set mouse="" "if i wanted to use a mouse, I'd use a bad text editor, I just want
 let mapleader = "," "this is the value of <Leader> who knows why it has to be configured
 set updatetime=250 "makes things update faster
 set wildmenu "this is the cool menu that shows you whats up when you press <Tab>
+set ignorecase
+set nohlsearch
 
 "Solarized
 colorscheme solarized
