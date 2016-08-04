@@ -13,6 +13,7 @@ Plug 'wesQ3/vim-windowswap', { 'on': 'WindowSwap' } "really nice window swap wit
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': 'javascript' }  "tern js completion
 Plug 'pangloss/vim-javascript', { 'for' : ['javascript', 'javascript.jsx'] } "better js indenting and stuff
 Plug 'mxw/vim-jsx', { 'for' : ['javascript', 'javascript.jsx'] } "jsx highlighting
+Plug 'derekwyatt/vim-scala', { 'for' : [ 'scala', 'notes' ] } "the worlds best language
 Plug 'godlygeek/tabular', { 'for': 'markdown' } | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' } "needed for reading .md files well
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-notes' "cool notetaking app for vim, start with :Notes
 Plug 'dhruvasagar/vim-table-mode' "table mode, start with <leader>tm
